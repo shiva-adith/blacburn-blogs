@@ -1,3 +1,6 @@
 # Ignore pycharm folders
 .idea
+__pycache__
 
+# Ignore Django assets
+assets

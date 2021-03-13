@@ -1,0 +1,43 @@
+/* Navbar */
+#mainNav {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+.fixed-top {
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+}
+
+/* Header section */
+header {
+    display: block;
+}
+
+.masthead {
+ text-align: center;
+    position: relative;
+    background-size: cover;
+    background: #6c757d no-repeat scroll 50% 50%;
+    margin-bottom: 50px;
+}
+
+.site-heading {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: auto;
+    margin-left: auto;
+}
