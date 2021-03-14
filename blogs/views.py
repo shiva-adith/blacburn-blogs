@@ -5,7 +5,7 @@ from .models import Post
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().reverse()[:3]
 
     return render(request, 'blogs/index.html', {'posts': posts})
 
@@ -19,4 +19,6 @@ def contact(request):
 
 
 def post(request):
-    return render(request, 'blogs/post.html')
+    posts = Post.objects.all().order_by('date_posted')
+    
+    return render(request, 'blogs/post.html', {'posts': posts})
