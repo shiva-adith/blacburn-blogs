@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     # tells django to read urls.py in the blogs app
     path('', include('blogs.urls')),
+    path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     path('admin/', admin.site.urls),
 ]

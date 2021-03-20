@@ -22,3 +22,4 @@ def post(request):
     posts = Post.objects.all().order_by('date_posted')
     
     return render(request, 'blogs/post.html', {'posts': posts})
+

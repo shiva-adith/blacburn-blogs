@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'blacburn_blogs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'blogs/templates/blogs']
+        'DIRS': [BASE_DIR / 'blogs/templates/blogs', BASE_DIR / 'accounts/templates/accounts']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

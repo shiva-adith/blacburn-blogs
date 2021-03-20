@@ -18,10 +18,11 @@
           <div
               class="collapse navbar-collapse show" id="navbarResponsive">
               <ul class="nav navbar-nav ml-auto">
-                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>
-                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact us</a></li>
-                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'post' %}">Blog Post</a></li>
+                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'blogs:index' %}">Home</a></li>
+                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'blogs:post' %}">Blog Post</a></li>
+                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'blogs:about' %}">About us</a></li>
+                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'blogs:contact' %}">Contact us</a></li>
+                  <li role="presentation" class="nav-item"><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
               </ul>
       </div>
       </div>
