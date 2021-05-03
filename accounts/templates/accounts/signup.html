@@ -1,16 +1,60 @@
 {% extends 'blogs/base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="row">
-  <div class="col-md-10 col-lg-8 mx-auto">
-     <form id="signupForm" novalidate="novalidate" method="POST">
-       <label>First Name: <input type="text"></label>
-       <label>Last Name: <input type="text"></label>
-     </form>
-  </div>
-</div>
 
+{#  Navbar and header image section #}
+  <header class="masthead" style="background-image:url({% static 'blogs/img/contact-bg.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="site-heading">
+                        <h1>Register</h1><span class="subheading">Sign Up in order to create, view posts and so much more!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-
+  {# Form section start #}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+                <form action="signup" id="signupForm" name="register" novalidate="novalidate" method="POST">
+                  {% csrf_token %}
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="first_name">First Name</label><input class="form-control" type="text" id="first_name" required="" placeholder="First Name"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="last_name">Last Name</label><input class="form-control" type="text" id="last_name" required="" placeholder="Last Name"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="username">Username</label><input class="form-control" type="text" id="username" required="" placeholder="Username"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="email">Email Address</label><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="phone">Phone Number</label><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="password1">Password</label><input class="form-control" type="password" id="password1" required="" placeholder="Password"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls"><label for="password2">Confirm Password</label><input class="form-control" type="password" id="password2" required="" placeholder="Confirm Password"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div id="success"></div>
+                    <br>
+                    <div class="form-group"><button class="btn btn-primary" id="registerButton" type="submit">Register</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {# Form section end #}
+    {% for message in messages %}
+      <h3>{{ message }}</h3>
+    {% endfor %}
 
 {% endblock %}
