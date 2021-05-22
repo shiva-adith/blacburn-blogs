@@ -26,12 +26,32 @@ def signup(request):
                                                 first_name=first_name, last_name=last_name)
                 user.save();
                 print('User Created')
-                return redirect('login')
+                return redirect('accounts:login')
         else:
             messages.info(request, 'Passwords not matching...')
-            return redirect('signup')
+            return redirect('accounts:signup')
         # return redirect('/')
 
     else:
         # the following is a GET request
         return render(request, 'accounts/signup.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(usermame=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('blogs:index')
+        else:
+            messages.info(request, "Invalid Credentials")
+            return redirect('accounts:login')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
