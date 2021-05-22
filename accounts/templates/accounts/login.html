@@ -1,0 +1,33 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{#  Navbar and header image section #}
+  <header class="masthead" style="background-image:url({% static 'blogs/img/contact-bg.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="site-heading">
+                        <h1>Register</h1><span class="subheading">Sign Up in order to create, view posts and so much more!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<body>
+  <form action="login" method="post">
+    {% csrf_token %}
+    <label>Username: <input type="text" name="username" placeholder="Username"></label><br>
+    <label>Password: <input type="password" name="password" placeholder="Password"></label><br>
+    <input type="submit">
+  </form>
+
+  <div>
+    {% for message in messages %}
+      <h3>{{ message }}</h3>
+    {% endfor %}
+  </div>
+</body>
+{% endblock %}

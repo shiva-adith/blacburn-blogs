@@ -50,3 +50,8 @@ def login(request):
         else:
             messages.info(request, "Invalid Credentials")
             return redirect('accounts:login')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
